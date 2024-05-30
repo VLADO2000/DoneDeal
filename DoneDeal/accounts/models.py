@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
+BUSINESS_ROLES = (
+    (0, 'individual'),
+    (1, 'company'),
+)
+
 class AccountManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
         """
@@ -16,3 +21,26 @@ class AccountManager(BaseUserManager):
         user.set_password(password)
         user.save()
         return user 
+    
+class Account(AbstractBaseUser):
+    email = models.EmailField(max_length=255, unique=True, verbose_name='email address', default=None)
+    is_active = models.BooleanField(default=True)
+    label = models.CharField(max_length=255, default=None, unique=True, verbose_name='brand name')
+    description = models.TextField(default=None)
+    date_joined = models.DateField(auto_now_add=True)
+    role = models.IntegerField(choices=BUSINESS_ROLES, default=0)
+
+    objects  = AccountManager()
+
+    USERNAME_FIELD = 'label'
+    REQUIRED_FIELDS = ['label', 'email']
+
+    def __str__(self):
+        return f'{self.email}--{self.label}'
+
+    def __repr__(self):
+        return f'{Account.__name__}-(label={self.label})' 
+    
+
+
+
