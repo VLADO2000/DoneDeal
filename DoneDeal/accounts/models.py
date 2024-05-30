@@ -32,8 +32,8 @@ class Account(AbstractBaseUser):
 
     objects  = AccountManager()
 
-    USERNAME_FIELD = 'label'
-    REQUIRED_FIELDS = ['label', 'email']
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['label']
 
     def __str__(self):
         return f'{self.email}--{self.label}'
