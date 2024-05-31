@@ -40,6 +40,19 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #local apps
     "accounts.apps.AccountsConfig",
+    #Third party apps
+    "crispy_forms",
+    "crispy_bootstrap5",
+    "allauth",
+    "allauth.account",
+
+]
+#django-allauth config
+SITE_ID = 1 
+
+AUTHENTICATION_BACKENDS =[
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +63,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    #allauth middleware
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "done_deal.urls"
@@ -65,6 +80,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                
             ],
         },
     },
@@ -132,3 +148,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Specified the custom model as the default user model
 AUTH_USER_MODEL = 'accounts.Account'
+#Temporarly redirected email into a console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
