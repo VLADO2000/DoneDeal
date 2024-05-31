@@ -72,7 +72,7 @@ ROOT_URLCONF = "done_deal.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -148,5 +148,25 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Specified the custom model as the default user model
 AUTH_USER_MODEL = 'accounts.Account'
+#Username functionality in alluth
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_SESSION_REMEMBER = True
+
 #Temporarly redirected email into a console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Redirect after succesful LogIn
+#LOGIN_REDIRECT_URL = "home"
+#Redirect after LogOut
+#LOGOUT_REDIRECT_URL = "home"
+
+#Static file pathe
+STATIC_URL = "static/"
+STATICFILES__DIR = [
+    BASE_DIR / "static",
+]
+#For convience of gathering all static files in one common directory by command collectstatic
+STATIC_ROOT = BASE_DIR / "staticfiles"
