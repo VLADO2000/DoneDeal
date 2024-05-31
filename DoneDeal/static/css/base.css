@@ -1,5 +1,11 @@
 /* static/css/base.css */
 body {
-    min-height: 75rem;
-    padding-top: 4.5rem;
+    background-color: #10a6a8;
+}
+
+.container {
+    position: relative;
+    top: 50rem;
+    /* Adjust this value based on your navbar height */
+    padding: 0 15px;
 }

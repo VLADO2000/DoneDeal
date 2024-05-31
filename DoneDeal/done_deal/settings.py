@@ -170,3 +170,6 @@ STATICFILES__DIR = [
 ]
 #For convience of gathering all static files in one common directory by command collectstatic
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+#Crispy forms 2.1 need settings attribute
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
