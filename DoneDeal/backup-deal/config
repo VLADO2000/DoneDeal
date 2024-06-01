@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/VLADO2000/DoneDeal.git
+	fetch = +refs/*:refs/*
+	mirror = true
