@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #local apps
     "accounts.apps.AccountsConfig",
+    "home_page.apps.HomePageConfig",
     #Third party apps
     "crispy_forms",
     "crispy_bootstrap5",
@@ -159,9 +160,9 @@ ACCOUNT_SESSION_REMEMBER = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Redirect after succesful LogIn
-#LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "home"
 #Redirect after LogOut
-#LOGOUT_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 #Static file pathe
 STATIC_URL = "static/"
