@@ -1,0 +1,24 @@
+{% load static %}
+{% extends "_base.html" %}
+{% block title %} Home Page {% endblock title %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% block content %}
+<div class="main-content">
+    <h1>Welcome</h1>
+    <p class="animation">Meet your first business deal</p>
+</div>
+<div class="grid-container">
+    <div class="grid-item">
+        <h1><a href="#">Bussiness</a></h1>
+    </div>
+    <div class="grid-item">
+        <h1><a href="#">Authors</a></h1>
+    </div>
+    <div class="grid-item">
+        <h1><a href="#">Reviews</a></h1>
+    </div>
+    <div class="grid-item">
+        <h1><a href="#">Users</a></h1>
+    </div>
+</div>
+{% endblock content %}
