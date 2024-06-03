@@ -25,7 +25,7 @@ class AccountManager(BaseUserManager):
 class Account(AbstractBaseUser):
     email = models.EmailField(max_length=255, unique=True, verbose_name='email address', default=None)
     is_active = models.BooleanField(default=True)
-    label = models.CharField(max_length=255, default=None, unique=True, verbose_name='brand name')
+    label = models.CharField(max_length=255, default=None, verbose_name='brand name')
     description = models.TextField(default=None)
     date_joined = models.DateField(auto_now_add=True)
     role = models.IntegerField(choices=BUSINESS_ROLES, default=0)
@@ -33,7 +33,7 @@ class Account(AbstractBaseUser):
     objects  = AccountManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['label']
+    # REQUIRED_FIELDS = ['email']
 
     def __str__(self):
         return f'{self.email}--{self.label}'
