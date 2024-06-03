@@ -22,5 +22,5 @@ urlpatterns = [
     #user registration urls
     path("accounts/", include('allauth.urls')),
     #local apps
-    path("/", include("home_page.urls")),
+    path("", include("home_page.urls")),
 ]
