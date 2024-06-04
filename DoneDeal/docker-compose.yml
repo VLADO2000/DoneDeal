@@ -12,6 +12,7 @@ services:
     - POSTGRES_NAME=postgres
     - POSTGRES_USER=postgres
     - POSTGRES_PASSWORD=postgres
+    - DJANGO_SECRET_KEY=django-insecure-0=+*k@@9^1!=o(pwg6pr*2)5*0i+=y!2+uch8u_g%)=%j($$s3(
     depends_on:
     - db
   
