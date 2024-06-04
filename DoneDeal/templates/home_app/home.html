@@ -3,22 +3,135 @@
 {% block title %} Home Page {% endblock title %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% block content %}
-<div class="main-content">
-    <h1>Welcome</h1>
-    <p class="animation">Meet your first business deal</p>
-</div>
-<div class="grid-container">
-    <div class="grid-item">
-        <h1><a href="#">Bussiness</a></h1>
+<!-- Why Us Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Why Us</h2>
+                <p>DoneDeal began over two decades ago by pioneering a better way of working, helping businesses
+                    find more flexibility and connecting talent with more opportunities.
+                    Our mission to create economic opportunities so people have better lives has taken us so much
+                    further.
+                    As a result, we’ve become the world’s work marketplace where every day businesses of all sizes and
+                    independent talent
+                    from around the globe meet here to accomplish incredible things.</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle"></i> Choose your projects</li>
+                    <li><i class="bi bi-check-circle"></i> Set up new oppportunities</li>
+                    <li><i class="bi bi-check-circle"></i> Convers with market players</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="grid-item">
-        <h1><a href="#">Deals</a></h1>
+</section>
+
+<!-- Our Clients Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Praticipants</h2>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img src="https://www.logolynx.com/images/logolynx/62/6247f9179a80b4c950f56ad096a3762b.jpeg"
+                        class="card-img-top" alt="DiteJoke">
+                    <div class="card-body">
+                        <h5 class="card-title">DiteJoke</h5>
+                        <p class="card-text">Dob't mess with dite as it is not a joke.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more client cards here -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.JUF_dA2c8PUGUduEU1ix5wAAAA?pid=ImgDet&w=474&h=316&rs=1"
+                        class="card-img-top" alt="Hell">
+                    <div class="card-body">
+                        <h5 class="card-title">The Villian</h5>
+                        <p class="card-text">Find your fuel for futer evil endavours</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more client cards here -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.lSs0foGlfGqgbq-ti2JNfgAAAA?pid=ImgDet&w=474&h=363&rs=1"
+                        class="card-img-top" alt="SomeDay">
+                    <div class="card-body">
+                        <h5 class="card-title">SomeDay</h5>
+                        <p class="card-text">If you've got a response you're a like one.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more client cards here -->
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img src="https://www.logolynx.com/images/logolynx/s_57/57ac11c8e8ba217320a0fb30f62fdbaf.jpeg"
+                        class="card-img-top" alt="Spite">
+                    <div class="card-body">
+                        <h5 class="card-title">Spite</h5>
+                        <p class="card-text">Despite the circumstances inspire on something bigger.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="grid-item">
-        <h1><a href="#">Reviews</a></h1>
+</section>
+
+<!-- How to Become a Member Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>How to Become a Member</h2>
+                <ol>
+                    <li>Sing up</li>
+                    <li>Fill profile with additional information</li>
+                    <li>Set up your first deal</li>
+                </ol>
+            </div>
+            <div class="col-md-6">
+                <img src="https://www.logolynx.com/images/logolynx/s_df/df75e39d36cba62196b329212850f01e.jpeg"
+                    class="img-fluid" alt="Membership">
+            </div>
+        </div>
     </div>
-    <div class="grid-item">
-        <h1><a href="#">Users</a></h1>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>DoneDeal began over two decades ago by pioneering a better way of working, helping businesses
+                    find more flexibility and connecting talent with more opportunities.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h5>Content</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>
+                    123 Main Street<br>
+                    City Jirk, State 12345<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@example.com
+                </p>
+            </div>
+        </div>
     </div>
-</div>
+</footer>
+<!-- JavaScript -->
+<script src="{% static 'js/home_page.js' %}"></script>
 {% endblock content %}
