@@ -152,9 +152,30 @@ AUTH_USER_MODEL = 'accounts.Account'
 #Username functionality in alluth
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+
+ACCOUNT_SIGNUP_REDIRECT_URL = 'home'
+
+#Default Forms for allauth 
+ACCOUNT_FORMS = {
+    'add_email': 'allauth.account.forms.AddEmailForm',
+    'change_password': 'allauth.account.forms.ChangePasswordForm',
+    'confirm_login_code': 'allauth.account.forms.ConfirmLoginCodeForm',
+    'login': 'allauth.account.forms.LoginForm',
+    'request_login_code': 'allauth.account.forms.RequestLoginCodeForm',
+    'reset_password': 'allauth.account.forms.ResetPasswordForm',
+    'reset_password_from_key': 'allauth.account.forms.ResetPasswordKeyForm',
+    'set_password': 'allauth.account.forms.SetPasswordForm',
+    #Custom Signup Form
+    'signup': 'accounts.forms.CustomAccountForm',
+    'user_token': 'allauth.account.forms.UserTokenForm',
+}
+
+
 
 #Temporarly redirected email into a console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
