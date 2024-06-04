@@ -152,13 +152,13 @@ AUTH_USER_MODEL = 'accounts.Account'
 #Username functionality in alluth
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = None
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
-ACCOUNT_SIGNUP_REDIRECT_URL = 'home'
+#ACCOUNT_SIGNUP_REDIRECT_URL = 'home'
 
 #Default Forms for allauth 
 ACCOUNT_FORMS = {
@@ -183,7 +183,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #Redirect after succesful LogIn
 LOGIN_REDIRECT_URL = "home"
 #Redirect after LogOut
-LOGOUT_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = 'account_login'
 
 #Static file pathe
 STATIC_URL = "static/"
