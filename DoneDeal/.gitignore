@@ -1,2 +1,5 @@
-data/db
-backup-deal/
+.env
+__pycache__/
+db.sqlite3
+.DS_Store
+
