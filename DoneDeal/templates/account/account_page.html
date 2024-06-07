@@ -28,8 +28,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="date_joined" class="form-label">Date Joined</label>
-                            <input type="date" class="form-control" id="date_joined" value="{{ account.date_joined }}"
-                                readonly>
+                            <input type="date" class="form-control" id="date_joined"
+                                value="{{ account.date_joined|date:'Y-m-d' }}" readonly>
                         </div>
                         <div class="mb-3">
                             <label for="role" class="form-label">Role</label>

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+from datetime import date
 
 BUSINESS_ROLES = (
     (0, 'individual'),
