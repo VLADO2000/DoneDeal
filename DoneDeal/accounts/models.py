@@ -41,6 +41,9 @@ class Account(AbstractBaseUser):
     def __repr__(self):
         return f'{Account.__name__}-(label={self.brand_name})' 
     
+    def get_role_display(self):
+        return BUSINESS_ROLES[self.role][1].title()
+    
 
 
 

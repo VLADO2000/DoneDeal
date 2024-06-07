@@ -1,0 +1,50 @@
+{% extends '_base.html' %}
+
+{% block title %}Account Page{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Account Details</h4>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" value="{{ account.email }}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brand_name" class="form-label">Brand Name</label>
+                            <input type="text" class="form-control" id="brand_name" value="{{ account.brand_name }}"
+                                readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="3"
+                                readonly>{{ account.description }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="date_joined" class="form-label">Date Joined</label>
+                            <input type="date" class="form-control" id="date_joined" value="{{ account.date_joined }}"
+                                readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <input type="text" class="form-control" id="role" value="{{ account.get_role_display }}"
+                                readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="is_active" class="form-label">Active Status</label>
+                            <input type="text" class="form-control" id="is_active"
+                                value="{{ account.is_active|yesno:'Active,Inactive' }}" readonly>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

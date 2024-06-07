@@ -23,4 +23,5 @@ urlpatterns = [
     path(r"^accounts/", include('allauth.urls')),
     #local apps
     path("", include("home_page.urls")),
+    path("", include("accounts.urls")),
 ]
