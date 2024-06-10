@@ -1,5 +1,7 @@
 from allauth.account.forms import SignupForm
 from django import forms
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth import get_user_model
 
 
 class CustomAccountForm(SignupForm):
@@ -13,3 +15,8 @@ class CustomAccountForm(SignupForm):
         user.role = self.cleaned_data['role']
         user.save()
         return user
+    
+class CustomAccountChangeForm(UserChangeForm):
+    class Meta:
+        model = get_user_model()
+        fields = UserChangeForm.Meta.fields + 'brand_name' + 'description' + 'role'
