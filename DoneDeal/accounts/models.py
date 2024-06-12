@@ -1,6 +1,8 @@
+import uuid
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from datetime import date
+
 
 BUSINESS_ROLES = (
     (0, 'individual'),
@@ -14,8 +16,10 @@ class AccountManager(BaseUserManager):
         """
         if not email:
             raise ValueError("User email ought to be provided")
+        
         email = self.normalize_email(email)
         user = self.model(
+            id = uuid.uuid4(), 
             email=email,
             **extra_fields
         )
@@ -24,12 +28,16 @@ class AccountManager(BaseUserManager):
         return user 
     
 class Account(AbstractBaseUser):
-    email = models.EmailField(max_length=255, unique=True, verbose_name='email address', default=None)
+    email = models.EmailField(max_length=255, unique=True, verbose_name='email address')
     is_active = models.BooleanField(default=True)
     brand_name = models.CharField(max_length=255, unique=True, verbose_name='brand name', null=True)
     description = models.TextField(default='', null=True)
     date_joined = models.DateField(auto_now_add=True)
     role = models.IntegerField(choices=BUSINESS_ROLES, default=0)
+    #Let's Add custom id field to reduce confusion
+    id = models.UUIDField(primary_key=True,
+                          default=uuid.uuid4,
+                          editable=False)
 
     objects  = AccountManager()
 

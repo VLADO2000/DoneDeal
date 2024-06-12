@@ -161,7 +161,7 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 #ACCOUNT_SIGNUP_REDIRECT_URL = 'home'
-
+ACCOUNT_ADAPTER = 'accounts.account_adapter.CustomAccountAdapter'
 #Default Forms for allauth 
 ACCOUNT_FORMS = {
     'add_email': 'allauth.account.forms.AddEmailForm',
