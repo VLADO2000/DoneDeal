@@ -1,15 +1,52 @@
 {% load static %}
-<nav class="navbar bg-body-tertiary fixed-top">
+<nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="https://static.wixstatic.com/media/0fd403_cd013788d30b454a8b13a2f2a247b5b7~mv2.png/v1/fill/w_600,h_600,al_c,lg_1,q_85/0fd403_cd013788d30b454a8b13a2f2a247b5b7~mv2.png"
                 alt="" width="44" height="34" class="d-inline-block align-text-top">
-
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" class="list-group-item list-group-item-action" aria-current="page"
+                    href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" class="list-group-item list-group-item-action" aria-current="page" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" class="list-group-item list-group-item-action" aria-current="page"
+                    href="#">Disabled</a>
+            </li>
+        </ul>
+        <div class="d-flex align-items-center ms-auto">
+            {% if user.is_authenticated %}
+            <span class="me-3">
+                <span class="badge bg-success">Online</span>
+            </span>
+            <ul class="nav nav-tabs">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false">{{user.brand_name}}</a>
+                    <ul class="dropdown-menu">
+                        {% if user.is_authenticated %}
+                        <li><a class="dropdown-item" href="{% url 'account_detail' pk=request.user.id %}">Profile</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DoneDeal</h5>
@@ -32,25 +69,10 @@
                             Profile
                         </a>
                         <ul class="dropdown-menu">
-                            {% if user.is_authenticated %}
-                            <li><a class="dropdown-item"
-                                    href="{% url 'account_detail' pk=request.user.id %}">Profile</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a></li>
-                            {% else %}
-                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
-                            {% endif %}
+
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex mt-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </div>
