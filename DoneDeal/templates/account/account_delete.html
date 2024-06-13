@@ -1,0 +1,15 @@
+“<!-- templates/account/logout.html -->
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+<h2>Profile Deletion</h2>
+<p>Are you sure you want to delete profile??</p>
+<form method="post" action="{% url 'account_delete' object.pk %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-danger" type="submit">Delete</button>
+</form>
+{% endblock content %}

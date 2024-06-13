@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from datetime import date
+from django.urls import reverse
 
 
 BUSINESS_ROLES = (
@@ -52,6 +53,9 @@ class Account(AbstractBaseUser):
     
     def get_role_display(self):
         return BUSINESS_ROLES[self.role][1].title()
+    
+    def get_absolute_url(self):
+        return reverse('account_detail', kwargs={'pk': self.id})
     
 
 

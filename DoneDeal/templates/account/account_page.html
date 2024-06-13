@@ -8,8 +8,15 @@
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="card">
-                <div class="card-header --bs-info-border-subtle text-$cyan-900">
+                <div
+                    class="card-header --bs-info-border-subtle text-$cyan-900 d-flex justify-content-between align-items-center">
                     <h4>Account Details</h4>
+                    <div>
+                        <a href="{% url 'account_update' pk=request.user.id %}"
+                            class="btn btn-outline-warning me-2">Edit</a>
+                        <a href="{% url 'account_delete' pk=request.user.id %}"
+                            class="btn btn-outline-danger">Delete</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <form>
