@@ -1,160 +1,229 @@
 {% extends "_base.html" %}
 {% load static %}
 {% block title %} Home Page {% endblock title %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 {% block content %}
-<!-- Why Us Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Why Us</h2>
-                <p>DoneDeal began over two decades ago by pioneering a better way of working, helping businesses
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<body>
+
+    <main>
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block mx-auto mb-4" src="{% static 'img/wyusD.jpg'%}" alt="" width="200" height="200">
+            <h1 class="display-5 fw-bold text-body-emphasis">Why us</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">DoneDeal began over two decades ago by pioneering a better way of working, helping
+                    businesses
                     find more flexibility and connecting talent with more opportunities.
                     Our mission to create economic opportunities so people have better lives has taken us so much
                     further.
                     As a result, we’ve become the world’s work marketplace where every day businesses of all sizes and
                     independent talent
                     from around the globe meet here to accomplish incredible things.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-light btn-lg px-4 gap-3">Get an overview</button>
+                    <button type="button" class="btn btn-dark btn-lg px-4">Find your deal</button>
+                </div>
             </div>
-            <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li><i class="bi bi-check-circle"></i> Choose your projects</li>
-                    <li><i class="bi bi-check-circle"></i> Set up new oppportunities</li>
-                    <li><i class="bi bi-check-circle"></i> Convers with market players</li>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis">Become a member</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Quickly design and customize responsive fuel for futer evil endavours.
+                    If you've got a response you're a like one. Despite the circumstances inspire on something bigger.
+                    Fill profile with additional information.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                    <button type="button" class="btn btn-light btn-lg px-4 me-sm-3">Companies list</button>
+                    <button type="button" class="btn btn-dark btn-lg px-4">Sposnsorship program</button>
+                </div>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{% static 'img/awesome.jpeg'%}" class="img-fluid border rounded-3 shadow-lg mb-4"
+                        alt="Example image" width="300" height="300" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="{% static 'img/Authentic.jpeg' %}" class="d-block mx-lg-auto img-fluid" alt="Themes"
+                        width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Authentic hero
+                    </h1>
+                    <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the
+                        world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
+                        responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-light btn-lg px-4 me-md-2">Earn badge</button>
+                        <button type="button" class="btn btn-dark btn-lg px-4">Get authenticity</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Sign up for more features
+                    </h1>
+                    <p class="col-lg-10 fs-4">All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                        chunks as necessary, making this the first true generator on the Internet. It uses a dictionary
+                        of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem
+                        Ipsum which looks reasonable.</p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <a href="{% url 'account_signup' %}"><button class="w-100 btn btn-lg btn-primary"> Sign
+                                up</button></a>
+                        <hr class="my-4">
+                        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Where does it come from?
+                    </h1>
+                    <p class="lead">It has roots in a piece of classical Latin literature from 45 BC, making it over
+                        2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+                        looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+                        going through the cites of the word in classical literature, discovered the undoubtable source.
+                    </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+                        <button type="button" class="btn btn-light btn-lg px-4 me-md-2 fw-bold">Lorem</button>
+                        <button type="button" class="btn btn-dark btn-lg px-4">Ipsum</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                    <img class="rounded-lg-3" src="{% static 'img/real.jpeg'%}" alt="Real Authentic" width="420">
+                </div>
+            </div>
+        </div>
+
+        <div class="b-example-divider"></div>
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-14 p-3 p-lg-5 pt-lg-3">
+                    <div class="row align-items-md-stretch">
+                        <div class="col-md-6">
+                            <div class="h-100 p-5 text-bg-dark rounded-3">
+                                <h2>Why do we use it?</h2>
+                                <p>It is a long established fact that a reader will be distracted by the readable
+                                    content of a page when looking at its layout. The point of using Lorem Ipsum is that
+                                    it has a more-or-less normal distribution of letters, as opposed to using 'Content
+                                    here, content here', making it look like readable English.</p>
+                                <button class="btn btn-outline-light" type="button">Upgrade plan</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                                <h2>Where can I get some?</h2>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                    suffered alteration in some form, by injected humour, or randomised words which
+                                    don't look even slightly believable. If you are going to use a passage of Lorem
+                                    Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+                                    text.</p>
+                                <button class="btn btn-outline-secondary" type="button">Read blog</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-example-divider"></div>
+
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Footer-->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+                    viewBox="0 0 24 24" focusable="false">
+                    <title>Product</title>
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                        d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+                    </path>
+                </svg>
+                <small class="d-block mb-3 text-muted">© 2024-2025</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Features</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Cool stuff</a></li>
+                    <li><a class="text-muted" href="#">Random feature</a></li>
+                    <li><a class="text-muted" href="#">Team feature</a></li>
+                    <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                    <li><a class="text-muted" href="#">Another one</a></li>
+                    <li><a class="text-muted" href="#">Last time</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Resource</a></li>
+                    <li><a class="text-muted" href="#">Resource name</a></li>
+                    <li><a class="text-muted" href="#">Another resource</a></li>
+                    <li><a class="text-muted" href="#">Final resource</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Resources</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Business</a></li>
+                    <li><a class="text-muted" href="#">Education</a></li>
+                    <li><a class="text-muted" href="#">Government</a></li>
+                    <li><a class="text-muted" href="#">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Team</a></li>
+                    <li><a class="text-muted" href="#">Locations</a></li>
+                    <li><a class="text-muted" href="#">Privacy</a></li>
+                    <li><a class="text-muted" href="#">Terms</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- Our Clients Section -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-4">Our Praticipants</h2>
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <img src="https://www.logolynx.com/images/logolynx/62/6247f9179a80b4c950f56ad096a3762b.jpeg"
-                        class="card-img-top" alt="DiteJoke">
-                    <div class="card-body">
-                        <h5 class="card-title">DiteJoke</h5>
-                        <p class="card-text">Dob't mess with dite as it is not a joke.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more client cards here -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <img src="https://th.bing.com/th/id/OIP.JUF_dA2c8PUGUduEU1ix5wAAAA?pid=ImgDet&w=474&h=316&rs=1"
-                        class="card-img-top" alt="Hell">
-                    <div class="card-body">
-                        <h5 class="card-title">The Villian</h5>
-                        <p class="card-text">Find your fuel for futer evil endavours</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more client cards here -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <img src="https://th.bing.com/th/id/OIP.lSs0foGlfGqgbq-ti2JNfgAAAA?pid=ImgDet&w=474&h=363&rs=1"
-                        class="card-img-top" alt="SomeDay">
-                    <div class="card-body">
-                        <h5 class="card-title">SomeDay</h5>
-                        <p class="card-text">If you've got a response you're a like one.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more client cards here -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <img src="https://www.logolynx.com/images/logolynx/s_57/57ac11c8e8ba217320a0fb30f62fdbaf.jpeg"
-                        class="card-img-top" alt="Spite">
-                    <div class="card-body">
-                        <h5 class="card-title">Spite</h5>
-                        <p class="card-text">Despite the circumstances inspire on something bigger.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- How to Become a Member Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>How to Become a Member</h2>
-                <ol>
-                    <li>Sing up</li>
-                    <li>Fill profile with additional information</li>
-                    <li>Set up your first deal</li>
-                </ol>
-            </div>
-            <div class="col-md-6">
-                <img src="https://img.freepik.com/vecteurs-premium/conception-du-logo-dp_839562-1408.jpg"
-                    class="img-fluid" alt="Membership" width="400" height="400">
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="container py-5">
-    <div class="row">
-        <div class="col-12 col-md">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
-                viewBox="0 0 24 24" focusable="false">
-                <title>Product</title>
-                <circle cx="12" cy="12" r="10"></circle>
-                <path
-                    d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
-                </path>
-            </svg>
-            <small class="d-block mb-3 text-muted">© 2024-2025</small>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Features</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Cool stuff</a></li>
-                <li><a class="text-muted" href="#">Random feature</a></li>
-                <li><a class="text-muted" href="#">Team feature</a></li>
-                <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                <li><a class="text-muted" href="#">Another one</a></li>
-                <li><a class="text-muted" href="#">Last time</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Resource</a></li>
-                <li><a class="text-muted" href="#">Resource name</a></li>
-                <li><a class="text-muted" href="#">Another resource</a></li>
-                <li><a class="text-muted" href="#">Final resource</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>Resources</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Business</a></li>
-                <li><a class="text-muted" href="#">Education</a></li>
-                <li><a class="text-muted" href="#">Government</a></li>
-                <li><a class="text-muted" href="#">Gaming</a></li>
-            </ul>
-        </div>
-        <div class="col-6 col-md">
-            <h5>About</h5>
-            <ul class="list-unstyled text-small">
-                <li><a class="text-muted" href="#">Team</a></li>
-                <li><a class="text-muted" href="#">Locations</a></li>
-                <li><a class="text-muted" href="#">Privacy</a></li>
-                <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
+</body>
 <!-- JavaScript -->
 <script src="{% static 'js/home_page.js' %}"></script>
 {% endblock content %}

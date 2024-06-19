@@ -2,8 +2,7 @@
 <nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="https://static.wixstatic.com/media/0fd403_cd013788d30b454a8b13a2f2a247b5b7~mv2.png/v1/fill/w_600,h_600,al_c,lg_1,q_85/0fd403_cd013788d30b454a8b13a2f2a247b5b7~mv2.png"
-                alt="" width="44" height="34" class="d-inline-block align-text-top">
+            <img src="{% static 'img/dd.jpeg'%}" alt="" width="44" height="34" class="d-inline-block align-text-top">
         </a>
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -41,13 +40,12 @@
                 </li>
             </ul>
             {% else %}
-            <span class="me-3">
-                <span class="badge text-bg-info">Login/SignUp</span>
-            </span>
             <ul class="nav nav-tabs">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                        aria-expanded="false">Authorize</a>
+                        aria-expanded="false">
+                        <span class="badge text-bg-info">Login/SignUp</span>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{% url 'account_login' %}">Log In</a></li>
                         <li>

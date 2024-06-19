@@ -189,11 +189,11 @@ LOGOUT_REDIRECT_URL = 'account_login'
 
 #Static file pathe
 STATIC_URL = "static/"
-STATICFILES__DIR = [
+STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 #For convience of gathering all static files in one common directory by command collectstatic
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #Crispy forms 2.1 need settings attribute
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
